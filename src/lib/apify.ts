@@ -3,7 +3,7 @@ import { InstagramProfile, InstagramPost } from "./types";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function transformApifyData(data: any): InstagramProfile {
   const posts: InstagramPost[] = (data.latestPosts || [])
-    .slice(0, 24)
+    .slice(0, 12)
     .map(
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (post: any): InstagramPost => ({
@@ -50,7 +50,7 @@ export async function fetchInstagramProfile(
       },
       body: JSON.stringify({
         usernames: [cleanUsername],
-        resultsLimit: 24,
+        resultsLimit: 12,
       }),
     }
   );
@@ -69,6 +69,10 @@ export async function fetchInstagramProfile(
 
   if (profile.isPrivate) {
     throw new Error(`Profile @${cleanUsername} is private`);
+  }
+
+  if (!profile.profilePicUrl || profile.followersCount === 0 && profile.postsCount === 0) {
+    throw new Error(`Profile not found: @${cleanUsername}`);
   }
 
   return profile;

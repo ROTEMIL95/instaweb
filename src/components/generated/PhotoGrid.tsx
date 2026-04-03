@@ -5,8 +5,6 @@ import Image from "next/image";
 import { InstagramPost } from "@/lib/types";
 import PhotoLightbox from "./PhotoLightbox";
 
-const FREE_LIMIT = 6;
-
 interface PhotoGridProps {
   posts: InstagramPost[];
 }
@@ -16,15 +14,11 @@ export default function PhotoGrid({ posts }: PhotoGridProps) {
 
   if (posts.length === 0) return null;
 
-  const visiblePosts = posts.slice(0, FREE_LIMIT);
-  const teaserPosts = posts.slice(FREE_LIMIT, FREE_LIMIT + 3);
-  const totalCount = posts.length;
-
   return (
     <>
-      {/* Main grid */}
+      {/* Photo grid — show all available posts */}
       <div className="grid grid-cols-3 gap-0.5">
-        {visiblePosts.map((post, i) => (
+        {posts.map((post, i) => (
           <button
             key={i}
             onClick={() => setLightboxIndex(i)}
@@ -42,35 +36,22 @@ export default function PhotoGrid({ posts }: PhotoGridProps) {
         ))}
       </div>
 
-      {/* "See all" teaser row */}
-      {teaserPosts.length > 0 && (
-        <div className="relative grid grid-cols-3 gap-0.5">
-          {teaserPosts.map((post, i) => (
-            <div key={i} className="relative aspect-square overflow-hidden">
-              <Image
-                src={post.displayUrl}
-                alt=""
-                fill
-                className="object-cover blur-sm scale-105 brightness-50"
-                sizes="33vw"
-              />
-            </div>
-          ))}
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <p className="text-sm font-semibold text-white">
-              See all {totalCount} photos
-            </p>
-            <p className="mt-1 text-xs text-white/50">
-              Available with InstaWeb Pro
-            </p>
-          </div>
+      {/* Pro teaser */}
+      {posts.length >= 12 && (
+        <div className="bg-gradient-to-b from-gray-50 to-gray-100 px-6 py-5 text-center">
+          <p className="text-sm font-semibold text-gray-500">
+            Want to show more photos?
+          </p>
+          <p className="mt-1 text-xs text-gray-400">
+            Unlock up to 200 photos with InstaWeb Pro
+          </p>
         </div>
       )}
 
       {/* Lightbox */}
       {lightboxIndex !== null && (
         <PhotoLightbox
-          posts={visiblePosts}
+          posts={posts}
           currentIndex={lightboxIndex}
           onIndexChange={setLightboxIndex}
           onClose={() => setLightboxIndex(null)}
