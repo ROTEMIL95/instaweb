@@ -45,3 +45,7 @@ next-env.d.ts
 .env.local
 .firecrawl/
 .superpowers/
+
+# Screenshots and test files
+*.png
+.playwright-mcp/
