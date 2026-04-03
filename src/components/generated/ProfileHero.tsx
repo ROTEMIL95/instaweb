@@ -20,9 +20,11 @@ export default function ProfileHero({
   gradient,
 }: ProfileHeroProps) {
   const formattedFollowers =
-    followersCount >= 1000
-      ? `${(followersCount / 1000).toFixed(1).replace(/\.0$/, "")}K`
-      : followersCount.toString();
+    followersCount >= 1_000_000
+      ? `${(followersCount / 1_000_000).toFixed(1).replace(/\.0$/, "")}M`
+      : followersCount >= 1000
+        ? `${(followersCount / 1000).toFixed(1).replace(/\.0$/, "")}K`
+        : followersCount.toString();
 
   return (
     <div className="py-12 px-6 text-center text-white" style={{ background: gradient }}>

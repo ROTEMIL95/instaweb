@@ -14,7 +14,7 @@ export const revalidate = 86400; // 24 hours ISR
 
 export async function generateMetadata({ params }: PageProps) {
   const { username } = await params;
-  const clean = username.replace(/^@/, "");
+  const clean = decodeURIComponent(username).replace(/^@/, "");
   return {
     title: `@${clean} — InstaWeb`,
     description: `Check out @${clean}'s website, built from their Instagram.`,
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function GeneratedSitePage({ params }: PageProps) {
   const { username } = await params;
-  const clean = username.replace(/^@/, "");
+  const clean = decodeURIComponent(username).replace(/^@/, "");
 
   let profile;
   try {
