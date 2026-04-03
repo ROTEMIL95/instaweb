@@ -3,7 +3,7 @@ import { InstagramProfile, InstagramPost } from "./types";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function transformApifyData(data: any): InstagramProfile {
   const posts: InstagramPost[] = (data.latestPosts || [])
-    .slice(0, 12)
+    .slice(0, 24)
     .map(
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (post: any): InstagramPost => ({
@@ -50,7 +50,7 @@ export async function fetchInstagramProfile(
       },
       body: JSON.stringify({
         usernames: [cleanUsername],
-        resultsLimit: 12,
+        resultsLimit: 24,
       }),
     }
   );
