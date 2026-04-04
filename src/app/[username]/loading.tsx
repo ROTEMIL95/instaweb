@@ -3,7 +3,7 @@ export default function Loading() {
     <div className="min-h-screen bg-brand-yellow flex items-center justify-center">
       <div className="text-center">
         <div className="text-xl font-black text-brand-brown mb-8">
-          instaweb
+          gramweb
         </div>
         <div className="space-y-4 max-w-[260px]">
           <div className="flex items-center gap-3">

@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "InstaWeb — Your Instagram. Now a Website.",
+  title: "GramWeb — Your Instagram. Now a Website.",
   description:
     "Turn your Instagram page into a beautiful website in 20 seconds. Free, no signup needed.",
 };

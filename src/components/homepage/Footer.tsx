@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="bg-white px-6 pb-10 pt-16 text-center">
       <p className="text-lg font-black tracking-tight text-brand-brown">
-        instaweb
+        gramweb
       </p>
 
       <div className="mt-6 flex flex-wrap items-center justify-center gap-6">
@@ -24,7 +24,7 @@ export default function Footer() {
       </div>
 
       <p className="mt-8 text-xs text-gray-300">
-        &copy; 2026 InstaWeb. All rights reserved.
+        &copy; 2026 GramWeb. All rights reserved.
       </p>
     </footer>
   );

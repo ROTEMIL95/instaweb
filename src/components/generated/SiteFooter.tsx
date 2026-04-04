@@ -7,7 +7,7 @@ export default function SiteFooter() {
         href="/"
         className="text-xs text-gray-300 hover:text-gray-500 transition-colors"
       >
-        Made with <span className="font-semibold text-gray-400">instaweb</span>
+        Made with <span className="font-semibold text-gray-400">gramweb</span>
       </Link>
     </div>
   );

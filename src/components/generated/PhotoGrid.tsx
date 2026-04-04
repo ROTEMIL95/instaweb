@@ -43,7 +43,7 @@ export default function PhotoGrid({ posts }: PhotoGridProps) {
             Want to show more photos?
           </p>
           <p className="mt-1 text-xs text-gray-400">
-            Unlock up to 200 photos with InstaWeb Pro
+            Unlock up to 200 photos with GramWeb Pro
           </p>
         </div>
       )}

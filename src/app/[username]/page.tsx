@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: PageProps) {
   const { username } = await params;
   const clean = decodeURIComponent(username).replace(/^@/, "");
   return {
-    title: `@${clean} — InstaWeb`,
+    title: `@${clean} — GramWeb`,
     description: `Check out @${clean}'s website, built from their Instagram.`,
   };
 }

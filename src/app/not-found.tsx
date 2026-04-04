@@ -5,7 +5,7 @@ export default function NotFound() {
     <div className="min-h-screen bg-brand-yellow flex items-center justify-center px-6">
       <div className="text-center">
         <div className="text-xl font-black text-brand-brown mb-6">
-          instaweb
+          gramweb
         </div>
         <h1 className="text-3xl font-extrabold text-brand-brown mb-3">
           Profile not found
