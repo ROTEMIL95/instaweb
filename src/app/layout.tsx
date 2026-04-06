@@ -5,9 +5,36 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GramWeb — Your Instagram. Now a Website.",
+  metadataBase: new URL("https://gramweb.app"),
+  title: {
+    template: "%s | GramWeb",
+    default: "GramWeb — Your Instagram. Now a Website.",
+  },
   description:
-    "Turn your Instagram page into a beautiful website in 20 seconds. Free, no signup needed.",
+    "Turn your Instagram page into a beautiful website in seconds. Free, no signup needed. Just paste your username.",
+  keywords: [
+    "instagram website builder",
+    "instagram to website",
+    "link in bio",
+    "instagram page website",
+    "free website from instagram",
+  ],
+  openGraph: {
+    title: "GramWeb — Your Instagram. Now a Website.",
+    description:
+      "Turn your Instagram page into a beautiful website in seconds. Free, no signup needed. Just paste your username.",
+    siteName: "GramWeb",
+    type: "website",
+    url: "https://gramweb.app",
+    images: [{ url: "/og-image.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GramWeb — Your Instagram. Now a Website.",
+    description:
+      "Turn your Instagram page into a beautiful website in seconds. Free, no signup needed. Just paste your username.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

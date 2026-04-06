@@ -9,6 +9,24 @@ import Footer from "@/components/homepage/Footer";
 export default function Home() {
   return (
     <main className="bg-brand-yellow">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "GramWeb",
+            url: "https://gramweb.app",
+            description:
+              "Turn your Instagram page into a beautiful website in seconds.",
+            potentialAction: {
+              "@type": "SearchAction",
+              target: "https://gramweb.app/@{search_term_string}",
+              "query-input": "required name=search_term_string",
+            },
+          }),
+        }}
+      />
       <Nav />
       <Hero />
       <Ticker />
